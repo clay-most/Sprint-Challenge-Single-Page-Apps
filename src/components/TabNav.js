@@ -29,22 +29,22 @@ export default class TabNav extends Component {
 				</Menu.Item>
 				
 				<Menu.Item as={Link} to='/character'
-					name='Characters'
+					name='characters'
 					active={activeItem === 'character'}
 					onClick={this.handleItemClick}
 				><Icon name="users"></Icon>Characters
 				</Menu.Item>
 
 				<Menu.Item as={Link} to='/locations'
-					name='Locations'
+					name='locations'
 					active={activeItem === 'locations'}
 					onClick={this.handleItemClick}
 				><Icon name="map outline"></Icon>Locations
 				</Menu.Item>
 
 				<Menu.Item as={Link} to='/episode'
-					name='Episodes'
-					active={activeItem === 'Episodes'}
+					name='episodes'
+					active={activeItem === 'episodes'}
 					onClick={this.handleItemClick}
 				><Icon name="video"></Icon>Episodes
 				</Menu.Item>
