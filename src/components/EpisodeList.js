@@ -27,7 +27,7 @@ export default function EpisodeList() {
 		           	air_date={episode.air_date}
 		          />
 		        )
-      	})};
+      	})}
         
     </section>
   );
