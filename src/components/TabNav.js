@@ -28,7 +28,7 @@ export default class TabNav extends Component {
 				><Icon name="home"></Icon>Home
 				</Menu.Item>
 				
-				<Menu.Item as={Link} to='/character'
+				<Menu.Item as={Link} to='/characters'
 					name='characters'
 					active={activeItem === 'character'}
 					onClick={this.handleItemClick}
@@ -42,7 +42,7 @@ export default class TabNav extends Component {
 				><Icon name="map outline"></Icon>Locations
 				</Menu.Item>
 
-				<Menu.Item as={Link} to='/episode'
+				<Menu.Item as={Link} to='/episodes'
 					name='episodes'
 					active={activeItem === 'episodes'}
 					onClick={this.handleItemClick}

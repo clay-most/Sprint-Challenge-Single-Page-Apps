@@ -6,7 +6,7 @@ export default function EpisodeList() {
 	const [episodes, setEpisodes] = useState( [] );
   	useEffect(() => {
       axios
-        .get('https://rickandmortyapi.com/api/episode/')
+        .get('https://rick-api.herokuapp.com/api/episode/')
         .then(response => {
           const episodes = response.data;
           setEpisodes(episodes.results);
