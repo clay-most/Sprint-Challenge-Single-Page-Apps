@@ -7,10 +7,10 @@ export default function LocationsList() {
 
   useEffect(() => {
     axios
-      .get(`https://rick-api.herokuapp.com/api/location/`)
+      .get(`https://rickandmortyapi.com/api/location/`)
       .then(response => {
         const locs = response.data;
-        setLocations(locs.results);
+        setLocations([locs.results]);
       })
       .catch(error => {
         console.log('error', error);

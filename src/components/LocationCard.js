@@ -8,7 +8,7 @@ export default function LocationCard({ name, type, dimension, residents }) {
         Type:{type} Dimension:{dimension}
       </p>
       <ul>
-        Residents
+        Residents:
         {residents.map(resident => {
           return <li>{resident}</li>;
         })}
