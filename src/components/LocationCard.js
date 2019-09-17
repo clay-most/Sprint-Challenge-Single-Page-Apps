@@ -1,16 +1,16 @@
 import React from 'react';
 
-export default function LocationCard({ name, type, dimension, residents }) {
+export default function LocationCard(props) {
   return (
     <div>
-      <h4>{name}</h4>
+      <h4>{props.location.name}</h4>
       <p>
-        Type:{type} Dimension:{dimension}
+        Type:{props.location.type} Dimension:{props.location.dimension}
       </p>
       <ul>
         Residents:
-        {residents.map(resident => {
-          return <li>{resident}</li>;
+        {props.location.residents.map((item, index) => {
+          return <li key={index}>{item}</li>;
         })}
       </ul>
     </div>
