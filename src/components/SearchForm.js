@@ -1,32 +1,43 @@
 import React, { useState, useEffect } from "react";
+import axios from "axios";
 import CharacterCard from "./CharacterCard";
-import Axios from "axios";
+import { Link } from "react-router-dom";
 
 export default function SearchForm() {
-  const [data, setData] = useState([]);
-  const [search, setSearch] = useState("");
+  const [characters, setCharacters] = useState([]);
+  const [query, setQuery] = useState("");
 
   useEffect(() => {
-    Axios.get("https://rickandmortyapi.com/api/character/").then(response => {
-      const resultsLocal = response.data.results.filter(character =>
-        character.name.toLowerCase().includes(search.toLocaleLowerCase())
+    axios.get("https://rickandmortyapi.com/api/character/").then(response => {
+      const characters = response.data.results.filter(char =>
+        char.name.toLowerCase().includes(query.toLowerCase())
       );
-      setData(resultsLocal);
+
+      setCharacters(characters);
     });
-  }),
-    [search];
+  }, [query]);
 
-  const HandleChange = event => {
-    setSearch(event.target.value);
+  const handleInputChange = event => {
+    setQuery(event.target.value);
   };
-
   return (
-    <section className="search-form">
+    <div>
       <form>
-        <input type="text" name="search" placeholder="Search by Name" />
-        <button>Search</button>
+        <input
+          id="name"
+          type="text"
+          name="textfield"
+          placeholder="Search"
+          value={query}
+          onChange={handleInputChange}
+        />
+
+        <Link to="/">
+          <button>Home</button>
+        </Link>
       </form>
-      {data.map(character => {
+
+      {characters.map(character => {
         return (
           <CharacterCard
             key={character.id}
@@ -37,6 +48,6 @@ export default function SearchForm() {
           ></CharacterCard>
         );
       })}
-    </section>
+    </div>
   );
 }
