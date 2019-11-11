@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import CharacterCard from "./CharacterCard";
-import { Link } from "react-router-dom";
 
 export default function SearchForm() {
   const [characters, setCharacters] = useState([]);
@@ -31,10 +30,6 @@ export default function SearchForm() {
           value={query}
           onChange={handleInputChange}
         />
-
-        <Link to="/">
-          <button>Home</button>
-        </Link>
       </form>
 
       {characters.map(character => {
